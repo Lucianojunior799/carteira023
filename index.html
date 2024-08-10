@@ -3,37 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stakin Wallet</title>
-    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <title>Wallet Interface</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+    <script src="wallet.js" defer></script>
 </head>
 <body>
-    <h1>Stakin Wallet</h1>
+    <h1>Wallet Interface</h1>
+    <div id="accountAddress">Connected Address: Not Connected</div>
+    <button onclick="checkBalance()">Check Balance</button>
+    <div id="balance">Balance: 0</div>
 
-    <div>
-        <h2>Check Balance</h2>
-        <button onclick="checkBalance()">Check Balance</button>
-        <p id="balance">Balance: </p>
-    </div>
+    <h2>Transfer Tokens</h2>
+    <input type="text" id="transferAddress" placeholder="Recipient Address">
+    <input type="number" id="transferAmount" placeholder="Amount">
+    <button onclick="transferTokens()">Transfer</button>
 
-    <div>
-        <h2>Transfer Tokens</h2>
-        <input type="text" id="transferAddress" placeholder="Recipient Address">
-        <input type="number" id="transferAmount" placeholder="Amount">
-        <button onclick="transferTokens()">Transfer</button>
-    </div>
+    <h2>Receive Tokens</h2>
+    <input type="number" id="receiveAmount" placeholder="Amount">
+    <button onclick="receiveTokens()">Receive</button>
 
-    <div>
-        <h2>Receive Tokens</h2>
-        <input type="number" id="receiveAmount" placeholder="Amount">
-        <button onclick="receiveTokens()">Receive</button>
-    </div>
-
-    <div>
-        <h2>Withdraw Tokens</h2>
-        <input type="number" id="withdrawAmount" placeholder="Amount">
-        <button onclick="withdrawTokens()">Withdraw</button>
-    </div>
-
-    <script src="wallet.js"></script>
+    <h2>Withdraw Tokens</h2>
+    <input type="number" id="withdrawAmount" placeholder="Amount">
+    <button onclick="withdrawTokens()">Withdraw</button>
 </body>
 </html>
